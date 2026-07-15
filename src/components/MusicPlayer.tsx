@@ -2,7 +2,7 @@
 
 import { useState } from "react";
 import dynamic from "next/dynamic";
-const ReactPlayer = dynamic(() => import("react-player/youtube"), { ssr: false });
+const ReactPlayer = dynamic(() => import("react-player"), { ssr: false });
 import { MUSIC } from "@/lib/constants";
 import { motion, AnimatePresence } from "framer-motion";
 
