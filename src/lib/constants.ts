@@ -3,43 +3,43 @@
 // ============================================
 
 export const COUPLE = {
-  groomName: "Aulia",
-  brideName: "Nabila",
-  groomFullName: "Aulia Rahman, S.Kom.",
-  brideFullName: "Nabila Syakieb, S.M.",
-  groomParents: "Bapak Rahman & Ibu Siti",
-  brideParents: "Bapak Syakieb & Ibu Aminah",
-  initials: "A & N",
-  hashtag: "#AureaNabila",
+  groomName: "Erianto",
+  brideName: "Tiara",
+  groomFullName: "Erianto",
+  brideFullName: "Tiara",
+  groomParents: "Bapak Tamrin & Ibu Hj. Ramlah",
+  brideParents: "Almarhum Bapak Abd. Rahim & Ibu Hj. Evi Sandra",
+  initials: "T & E",
+  hashtag: "#TiaraErianto",
 };
 
-export const WEDDING_DATE = new Date("2026-12-12T09:00:00+08:00");
+export const WEDDING_DATE = new Date("2026-07-18T11:00:00+08:00");
 
 export const EVENTS = {
   akad: {
     title: "Akad Nikah",
-    time: "09.00 WITA",
+    time: "Sabtu, 18 Juli | 11.00 WITA",
     icon: "ring",
   },
   resepsi: {
     title: "Resepsi",
-    time: "19.00 WITA",
+    time: "Minggu, 19 Juli | 09.00 WITA",
     icon: "party",
   },
   dressCode: {
     title: "Dress Code",
-    value: "Earth Tone",
+    value: "Bebas, Sopan & Rapi",
     icon: "palette",
   },
 };
 
 export const VENUE = {
-  name: "Grand Ballroom Hotel XYZ",
-  address: "Jl. Example No. 123",
-  city: "Makassar",
-  fullAddress: "Grand Ballroom Hotel XYZ, Jl. Example No. 123, Makassar, Sulawesi Selatan",
-  mapsUrl: "https://maps.google.com/?q=Grand+Ballroom+Hotel+XYZ+Makassar",
-  embedUrl: "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3973.7!2d119.41!3d-5.14!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zNcKwMDgnMjQuMCJTIDExOcKwMjQnMzYuMCJF!5e0!3m2!1sen!2sid!4v1",
+  name: "Labekkang",
+  address: "Desa Botto",
+  city: "Kec. Pitu Riase, Kab. Sidrap",
+  fullAddress: "Labekkang, Desa Botto, Kec. Pitu Riase, Kabupaten Sidenreng Rappang (Sidrap)",
+  mapsUrl: "https://maps.google.com/?q=Desa+Botto+Pitu+Riase+Sidrap",
+  embedUrl: "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3976.2!2d120.1!3d-3.9!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zM8KwNTQnMDAuMCJTIDEyMMKwMDYnMDAuMCJF!5e0!3m2!1sen!2sid!4v1",
 };
 
 export const DIGITAL_GIFTS = [
