@@ -1,7 +1,8 @@
 "use client";
 
 import { useState } from "react";
-import ReactPlayer from "react-player/youtube";
+import dynamic from "next/dynamic";
+const ReactPlayer = dynamic(() => import("react-player/youtube"), { ssr: false });
 import { MUSIC } from "@/lib/constants";
 import { motion, AnimatePresence } from "framer-motion";
 
