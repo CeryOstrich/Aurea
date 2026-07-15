@@ -70,6 +70,6 @@ export const GALLERY_IMAGES = galleryFiles.map((filename, i) => ({
 }));
 
 export const MUSIC = {
-  src: "/music/Alex Warren - Ordinary (Official Video).mp3",
+  src: "https://youtu.be/u2ah9tWTkmk",
   title: "Alex Warren - Ordinary",
 };

@@ -1,18 +1,35 @@
 "use client";
 
-import { useAudioPlayer } from "@/hooks/useAudioPlayer";
+import { useState } from "react";
+import ReactPlayer from "react-player/youtube";
 import { MUSIC } from "@/lib/constants";
 import { motion, AnimatePresence } from "framer-motion";
 
 export default function MusicPlayer() {
-  const { isPlaying, toggle } = useAudioPlayer(MUSIC.src);
+  const [isPlaying, setIsPlaying] = useState(false);
+
+  const toggle = () => {
+    setIsPlaying(!isPlaying);
+  };
 
   return (
-    <motion.div
-      initial={{ opacity: 0, scale: 0.8 }}
-      animate={{ opacity: 1, scale: 1 }}
-      transition={{ delay: 1.2, duration: 0.4 }}
-      className="fixed bottom-5 right-5 z-50"
+    <>
+      <div className="hidden">
+        <ReactPlayer
+          url={MUSIC.src}
+          playing={isPlaying}
+          loop={true}
+          volume={0.5}
+          width="0"
+          height="0"
+          playsinline={true}
+        />
+      </div>
+      <motion.div
+        initial={{ opacity: 0, scale: 0.8 }}
+        animate={{ opacity: 1, scale: 1 }}
+        transition={{ delay: 1.2, duration: 0.4 }}
+        className="fixed bottom-5 right-5 z-50"
     >
       <button
         onClick={toggle}
@@ -61,5 +78,6 @@ export default function MusicPlayer() {
         </AnimatePresence>
       </button>
     </motion.div>
+    </>
   );
 }
