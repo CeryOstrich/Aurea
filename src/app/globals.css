@@ -1,0 +1,193 @@
+@import "tailwindcss";
+
+/* ============================================
+   AURÉA — Luxury Wedding Invitation
+   Design System & Global Styles
+   ============================================ */
+
+/* ---------- Custom Theme ---------- */
+@theme {
+  /* Colors */
+  --color-midnight: #F8F9FA; /* Mapped to light background for compatibility, but better to rename. We'll redefine it to keep classes working, but change values */
+  --color-bg-light: #F8F9FA;
+  --color-bg-white: #FFFFFF;
+  --color-emerald: #059669;
+  --color-emerald-light: #10B981;
+  --color-emerald-dark: #047857;
+  --color-text-dark: #333333;
+  --color-text-muted: #666666;
+  
+  /* Retain old vars temporarily but map them to new values so we don't break everything instantly */
+  --color-midnight: #F8F9FA;
+  --color-midnight-light: #FFFFFF;
+  --color-ivory: #333333; /* Text color */
+  --color-gold: #059669; /* Accent color */
+  --color-gold-light: #10B981;
+  --color-gold-dark: #047857;
+  --color-warm-gray: #666666;
+
+  /* Animations */
+  --animate-fade-in: fade-in 1s ease-out forwards;
+  --animate-slide-up: slide-up 1s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+  --animate-pulse-emerald: pulse-emerald 3s ease-in-out infinite;
+  --animate-spin-slow: spin 8s linear infinite;
+  --animate-fall: fall linear infinite;
+
+  @keyframes fade-in {
+    from { opacity: 0; }
+    to { opacity: 1; }
+  }
+  @keyframes slide-up {
+    from { opacity: 0; transform: translateY(30px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+  @keyframes pulse-emerald {
+    0%, 100% { box-shadow: 0 0 0 0 rgba(5, 150, 105, 0.2); }
+    50% { box-shadow: 0 0 20px 2px rgba(5, 150, 105, 0.1); }
+  }
+  @keyframes fall {
+    0% { transform: translateY(-10vh) rotate(0deg); opacity: 0; }
+    10% { opacity: 0.8; }
+    90% { opacity: 0.8; }
+    100% { transform: translateY(110vh) rotate(360deg); opacity: 0; }
+  }
+}
+
+/* ========================================
+   BASE STYLES
+   ======================================== */
+
+@layer base {
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+
+  html {
+    scroll-behavior: smooth;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  body {
+    font-family: var(--font-inter), "Inter", sans-serif;
+    background-color: var(--color-bg-light);
+    color: var(--color-text-dark);
+    overflow-x: hidden;
+    line-height: 1.6;
+    font-size: 14px;
+  }
+}
+
+/* ========================================
+   TYPOGRAPHY
+   ======================================== */
+@layer components {
+  .font-heading {
+    font-family: var(--font-cormorant), "Cormorant Garamond", serif;
+  }
+  .font-display {
+    font-family: var(--font-playfair), "Playfair Display", serif;
+  }
+  .font-body {
+    font-family: var(--font-inter), "Inter", sans-serif;
+  }
+  .font-accent {
+    font-family: var(--font-poppins), "Poppins", sans-serif;
+  }
+
+  h1, h2, h3, h4 {
+    font-family: var(--font-cormorant), "Cormorant Garamond", serif;
+    font-weight: 300;
+    line-height: 1.2;
+  }
+}
+
+/* ========================================
+   UTILITIES & COMPONENTS
+   ======================================== */
+@layer components {
+  .gold-gradient-text {
+    background: linear-gradient(to right, var(--color-gold-light), var(--color-gold), var(--color-gold-dark));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  .glass-card {
+    background: rgba(255, 255, 255, 0.7);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border: 1px solid rgba(5, 150, 105, 0.15);
+    border-radius: 8px; /* More elegant sharp corners */
+  }
+
+  .section-padding {
+    padding: clamp(4rem, 10vh, 8rem) clamp(1.5rem, 5vw, 3rem);
+  }
+
+  .ornament-divider {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+    margin: 1.5rem 0;
+  }
+
+  .ornament-divider::before,
+  .ornament-divider::after {
+    content: '';
+    width: 60px;
+    height: 1px;
+    background: linear-gradient(90deg, transparent, rgba(5, 150, 105, 0.5), transparent);
+  }
+
+  .section-label {
+    font-family: var(--font-poppins), sans-serif;
+    font-size: 0.65rem;
+    letter-spacing: 0.3em;
+    text-transform: uppercase;
+    color: var(--color-warm-gray);
+    margin-bottom: 0.75rem;
+  }
+
+  .section-title {
+    font-family: var(--font-cormorant), serif;
+    font-size: clamp(2rem, 6vw, 3.5rem);
+    font-weight: 300;
+    color: var(--color-text-dark);
+    letter-spacing: 0.05em;
+  }
+
+  .btn-gold {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    padding: 0.8rem 2rem;
+    background: transparent;
+    color: var(--color-gold);
+    border: 1px solid var(--color-gold);
+    font-family: var(--font-poppins), sans-serif;
+    font-size: 0.75rem;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    transition: all 0.3s ease;
+    border-radius: 2px;
+  }
+
+  .btn-gold:hover {
+    background: var(--color-gold);
+    color: var(--color-midnight);
+  }
+}
+
+@layer base {
+  @media (prefers-reduced-motion: reduce) {
+    * {
+      animation-duration: 0.01ms !important;
+      transition-duration: 0.01ms !important;
+    }
+  }
+}
