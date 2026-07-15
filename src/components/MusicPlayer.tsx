@@ -12,17 +12,11 @@ function getYouTubeId(url: string): string | null {
   return match ? match[1] : null;
 }
 
-declare global {
-  interface Window {
-    YT: typeof YT;
-    onYouTubeIframeAPIReady: () => void;
-  }
-}
-
 export default function MusicPlayer() {
   const [isPlaying, setIsPlaying] = useState(false);
   const [isReady, setIsReady] = useState(false);
-  const playerRef = useRef<YT.Player | null>(null);
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+  const playerRef = useRef<any>(null);
   const containerRef = useRef<HTMLDivElement>(null);
 
   const videoId = getYouTubeId(MUSIC.src);
@@ -35,7 +29,9 @@ export default function MusicPlayer() {
     playerDiv.id = "yt-music-player";
     containerRef.current.appendChild(playerDiv);
 
-    playerRef.current = new window.YT.Player("yt-music-player", {
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
+    const YT = (window as unknown as Record<string, any>).YT;
+    playerRef.current = new YT.Player("yt-music-player", {
       videoId,
       height: "0",
       width: "0",
@@ -60,12 +56,13 @@ export default function MusicPlayer() {
 
   useEffect(() => {
     // Load YouTube IFrame API script
-    if (typeof window !== "undefined" && !window.YT) {
+    const win = window as unknown as Record<string, unknown>;
+    if (typeof window !== "undefined" && !win.YT) {
       const tag = document.createElement("script");
       tag.src = "https://www.youtube.com/iframe_api";
       document.head.appendChild(tag);
-      window.onYouTubeIframeAPIReady = initPlayer;
-    } else if (window.YT && window.YT.Player) {
+      win.onYouTubeIframeAPIReady = initPlayer;
+    } else if (win.YT && (win.YT as Record<string, unknown>).Player) {
       initPlayer();
     }
 
