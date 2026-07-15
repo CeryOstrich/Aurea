@@ -2,6 +2,7 @@
 
 import { useEffect, useRef } from "react";
 import { motion } from "framer-motion";
+import Image from "next/image";
 import { COUPLE } from "@/lib/constants";
 import FloralCorner from "@/components/FloralCorner";
 
@@ -22,9 +23,14 @@ export default function HeroSection() {
     <section id="opening" className="relative h-dvh min-h-[650px] flex items-center justify-center overflow-hidden bg-white">
       {/* Parallax Background */}
       <div ref={bgRef} className="absolute inset-0 scale-[1.15] will-change-transform transform-gpu">
-        <div
-          className="absolute inset-0 bg-cover bg-center bg-no-repeat opacity-40"
-          style={{ backgroundImage: "url('/images/hero-bg.webp')" }}
+        <Image
+          src="/images/gallery/JNY08574.webp"
+          alt="Wedding Hero Background"
+          fill
+          priority
+          className="object-cover opacity-40"
+          style={{ objectPosition: "center 55%" }}
+          sizes="100vw"
         />
         <div className="absolute inset-0 bg-gradient-to-b from-white/30 via-white/60 to-[var(--color-bg-light)]" />
       </div>
@@ -44,7 +50,7 @@ export default function HeroSection() {
           <div className="absolute bottom-0 left-0 w-12 h-12 border-b-2 border-l-2 border-[var(--color-emerald)]/40 rounded-bl-xl" />
           <div className="absolute bottom-0 right-0 w-12 h-12 border-b-2 border-r-2 border-[var(--color-emerald)]/40 rounded-br-xl" />
         </div>
-        
+
         <div className="relative z-10 text-center px-6">
           <motion.p
             initial={{ opacity: 0, y: 10 }}
@@ -92,7 +98,7 @@ export default function HeroSection() {
             transition={{ delay: 1 }}
             className="text-lg sm:text-xl font-heading tracking-[0.15em] text-gray-800"
           >
-            12 December 2026
+            18 Juli 2026
           </motion.p>
 
           {/* Save the date */}

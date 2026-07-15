@@ -42,21 +42,23 @@ export default function DigitalGift() {
 
           <div className="p-8 sm:p-12 text-center">
             {/* Tab Navigation */}
-            <div className="flex flex-wrap justify-center gap-3 mb-10 relative z-10">
-              {DIGITAL_GIFTS.map((gift) => (
-                <button
-                  key={gift.id}
-                  onClick={() => setActiveId(gift.id)}
-                  className={`px-5 py-2 text-[0.7rem] font-accent tracking-widest uppercase transition-all duration-300 cursor-pointer border
-                    ${activeId === gift.id
-                      ? "border-gold text-gold bg-gold/5"
-                      : "border-transparent text-warm-gray hover:text-ivory hover:border-gold/30"
-                    }`}
-                >
-                  {gift.name}
-                </button>
-              ))}
-            </div>
+            {DIGITAL_GIFTS.length > 1 && (
+              <div className="flex flex-wrap justify-center gap-3 mb-10 relative z-10">
+                {DIGITAL_GIFTS.map((gift) => (
+                  <button
+                    key={gift.id}
+                    onClick={() => setActiveId(gift.id)}
+                    className={`px-5 py-2 text-[0.7rem] font-accent tracking-widest uppercase transition-all duration-300 cursor-pointer border
+                      ${activeId === gift.id
+                        ? "border-gold text-gold bg-gold/5"
+                        : "border-transparent text-warm-gray hover:text-ivory hover:border-gold/30"
+                      }`}
+                  >
+                    {gift.name}
+                  </button>
+                ))}
+              </div>
+            )}
 
             {/* Active Content */}
             <div className="min-h-[200px] flex items-center justify-center relative z-10">

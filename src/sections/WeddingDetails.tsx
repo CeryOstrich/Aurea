@@ -17,7 +17,7 @@ export default function WeddingDetails() {
           viewport={{ once: true, amount: 0.3 }}
           className="text-center mb-16"
         >
-          <p className="section-label">Susunan Acara</p>
+          <p className="section-label">Waktu & Susunan Acara</p>
           <h2 className="section-title mb-1 text-gray-800">Rundown</h2>
           <div className="ornament-divider" />
         </motion.div>
@@ -47,7 +47,7 @@ export default function WeddingDetails() {
                   {VENUE.name}
                 </p>
               </div>
-              
+
               {/* Center Dot */}
               <div className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 w-10 h-10 bg-white rounded-full border border-[var(--color-emerald)]/30 flex items-center justify-center shadow-[0_0_15px_rgba(5,150,105,0.1)] group-hover:scale-110 transition-transform duration-500 z-10">
                 <div className="w-3 h-3 bg-[var(--color-emerald)] rounded-full" />
@@ -113,11 +113,11 @@ export default function WeddingDetails() {
                 <p className="text-2xl font-heading text-gray-800 mb-1">
                   {EVENTS.dressCode.value}
                 </p>
-                <p className="text-xs text-gray-500 font-body">
-                  Formal / Batik
+                <p className="text-xs text-gray-500 font-body uppercase tracking-widest mt-2">
+                  Batik / Busana Formal
                 </p>
               </div>
-              
+
               {/* Center Dot */}
               <div className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 w-10 h-10 bg-white rounded-full border border-[var(--color-emerald)]/30 flex items-center justify-center shadow-[0_0_15px_rgba(5,150,105,0.1)] group-hover:scale-110 transition-transform duration-500 z-10">
                 <div className="w-3 h-3 bg-[var(--color-emerald)] rounded-full" />
@@ -133,7 +133,7 @@ export default function WeddingDetails() {
                     </svg>
                   </div>
                   <p className="text-[0.7rem] text-gray-500 leading-relaxed">
-                    Mohon kenakan pakaian bernuansa warna tanah (Earth Tone).
+                    Tidak ada ketentuan warna khusus. Kami memohon kesediaan para tamu undangan untuk mengenakan pakaian yang sopan, rapi, dan nyaman.
                   </p>
                 </div>
               </div>

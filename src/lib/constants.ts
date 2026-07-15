@@ -28,7 +28,7 @@ export const EVENTS = {
   },
   dressCode: {
     title: "Dress Code",
-    value: "Bebas, Sopan & Rapi",
+    value: "Bebas & Rapi",
     icon: "palette",
   },
 };
@@ -44,60 +44,32 @@ export const VENUE = {
 
 export const DIGITAL_GIFTS = [
   {
-    id: "qris",
-    method: "QRIS",
-    name: "Scan QRIS",
-    accountNumber: "",
-    icon: "qris",
-    hasQR: true,
-  },
-  {
-    id: "bca",
-    method: "Bank Transfer",
-    name: "BCA",
-    accountNumber: "1234567890",
-    accountHolder: "Aulia",
-    icon: "bank",
-    hasQR: false,
-  },
-  {
-    id: "mandiri",
-    method: "Bank Transfer",
-    name: "Mandiri",
-    accountNumber: "0987654321",
-    accountHolder: "Nabila",
-    icon: "bank",
-    hasQR: false,
-  },
-  {
     id: "dana",
     method: "E-Wallet",
     name: "Dana",
-    accountNumber: "081234567890",
-    accountHolder: "Aulia",
-    icon: "wallet",
-    hasQR: false,
-  },
-  {
-    id: "gopay",
-    method: "E-Wallet",
-    name: "GoPay",
-    accountNumber: "081234567890",
-    accountHolder: "Nabila",
+    accountNumber: "087784161383",
+    accountHolder: "Tiara",
     icon: "wallet",
     hasQR: false,
   },
 ];
 
-export const GALLERY_IMAGES = Array.from({ length: 16 }, (_, i) => ({
+const galleryFiles = [
+  "JNY08528.webp", "JNY08543.webp", "JNY08557.webp", "JNY08565.webp",
+  "JNY08574.webp", "JNY08581.webp", "JNY08592.webp", "JNY08600.webp",
+  "JNY08614.webp", "JNY08627.webp", "JNY08629.webp", "JNY08634.webp",
+  "JNY08660.webp", "JNY08668.webp", "JNY08696.webp", "JNY08711.webp"
+];
+
+export const GALLERY_IMAGES = galleryFiles.map((filename, i) => ({
   id: i + 1,
-  src: `/images/gallery/gallery-${i + 1}.webp`,
-  alt: `Pre-wedding photo ${i + 1}`,
+  src: `/images/gallery/${filename}`,
+  alt: `Tiara & Erianto - Moments ${i + 1}`,
   width: i % 3 === 0 ? 800 : 600,
   height: i % 3 === 0 ? 1200 : i % 3 === 1 ? 800 : 900,
 }));
 
 export const MUSIC = {
-  src: "/music/background.mp3",
-  title: "Wedding Instrumental",
+  src: "/music/Alex Warren - Ordinary (Official Video).mp3",
+  title: "Alex Warren - Ordinary",
 };

@@ -1,8 +1,7 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   images: {
-    // Allow unoptimized for local placeholder images (PNGs named as .webp)
-    unoptimized: true,
+    // Next.js will now automatically optimize images
   },
 };
 

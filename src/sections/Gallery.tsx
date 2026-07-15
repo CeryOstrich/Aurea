@@ -54,6 +54,7 @@ export default function Gallery() {
                     alt={image.alt}
                     width={image.width}
                     height={image.height}
+                    sizes="(max-width: 640px) 50vw, (max-width: 1024px) 33vw, 25vw"
                     className="w-full h-auto object-cover opacity-90 group-hover:opacity-100 group-hover:scale-[1.02] transition-all duration-700 ease-out"
                     loading="lazy"
                   />

@@ -17,6 +17,11 @@
   --color-text-dark: #333333;
   --color-text-muted: #666666;
   
+  /* Real Luxury Colors */
+  --color-true-gold: #D4B483;
+  --color-true-emerald: #153629;
+  --color-true-emerald-dark: #0A1F16;
+  
   /* Retain old vars temporarily but map them to new values so we don't break everything instantly */
   --color-midnight: #F8F9FA;
   --color-midnight-light: #FFFFFF;

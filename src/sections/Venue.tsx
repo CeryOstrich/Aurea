@@ -17,7 +17,7 @@ export default function Venue() {
           viewport={{ once: true, amount: 0.3 }}
           className="text-center mb-10"
         >
-          <p className="section-label">Lokasi & Waktu</p>
+          <p className="section-label">Lokasi</p>
           <h2 className="section-title mb-1 text-gray-800">Acara</h2>
           <div className="ornament-divider" />
         </motion.div>

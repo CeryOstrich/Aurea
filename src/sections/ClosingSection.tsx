@@ -50,7 +50,7 @@ export default function ClosingSection() {
           </h3>
 
           <p className="mt-2 text-[0.65rem] tracking-[0.2em] text-gray-400 font-accent">
-            12 . 12 . 2026
+            18 . 07 . 2026
           </p>
         </motion.div>
       </div>

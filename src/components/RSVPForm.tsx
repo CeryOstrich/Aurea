@@ -6,6 +6,9 @@ import { motion } from "framer-motion";
 export default function RSVPForm() {
   const [status, setStatus] = useState<"idle" | "loading" | "success" | "error">("idle");
   const [attendance, setAttendance] = useState<"hadir" | "tidak_hadir" | null>(null);
+  const [name, setName] = useState("");
+  const [countryCode, setCountryCode] = useState("+62");
+  const [whatsapp, setWhatsapp] = useState("");
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
@@ -13,10 +16,15 @@ export default function RSVPForm() {
     
     setStatus("loading");
     
-    // Simulate API call
+    const formattedAttendance = attendance === "hadir" ? "Hadir" : "Tidak Hadir";
+    const textMessage = `Halo Tiara & Erianto,\n\nSaya ingin konfirmasi kehadiran untuk acara pernikahan Anda.\n\nDetail Konfirmasi:\n- Nama: ${name}\n- No. WhatsApp: ${countryCode}${whatsapp}\n- Status: ${formattedAttendance}\n\nTerima kasih!`;
+    const encodedMessage = encodeURIComponent(textMessage);
+    const whatsappUrl = `https://wa.me/6287784161383?text=${encodedMessage}`;
+
     setTimeout(() => {
       setStatus("success");
-    }, 1500);
+      window.open(whatsappUrl, "_blank");
+    }, 1200);
   };
 
   return (
@@ -37,7 +45,7 @@ export default function RSVPForm() {
             </svg>
           </div>
           <p className="font-medium text-lg text-gray-800">Terkirim!</p>
-          <p className="text-sm text-gray-500 mt-2">Terima kasih atas konfirmasi Anda.</p>
+          <p className="text-sm text-gray-500 mt-2">Terima kasih atas konfirmasi Anda. WhatsApp Anda akan terbuka untuk mengirimkan pesan konfirmasi.</p>
         </motion.div>
       ) : (
         <form onSubmit={handleSubmit} className="space-y-5">
@@ -46,6 +54,8 @@ export default function RSVPForm() {
             <input 
               type="text" 
               required
+              value={name}
+              onChange={(e) => setName(e.target.value)}
               className="w-full px-4 py-3 bg-gray-50 border border-gray-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-[var(--color-emerald)]/20 focus:border-[var(--color-emerald)] transition-colors text-gray-800"
               placeholder="Masukkan nama Anda"
             />
@@ -54,7 +64,11 @@ export default function RSVPForm() {
           <div>
             <label className="block text-sm font-medium text-gray-700 mb-1">Nomor WhatsApp</label>
             <div className="flex">
-              <select className="px-3 py-3 bg-gray-50 border border-gray-200 rounded-l-lg border-r-0 focus:outline-none focus:ring-2 focus:ring-[var(--color-emerald)]/20 text-gray-600">
+              <select 
+                value={countryCode}
+                onChange={(e) => setCountryCode(e.target.value)}
+                className="px-3 py-3 bg-gray-50 border border-gray-200 rounded-l-lg border-r-0 focus:outline-none focus:ring-2 focus:ring-[var(--color-emerald)]/20 text-gray-600"
+              >
                 <option value="+62">🇮🇩 +62</option>
                 <option value="+60">🇲🇾 +60</option>
                 <option value="+65">🇸🇬 +65</option>
@@ -62,6 +76,8 @@ export default function RSVPForm() {
               <input 
                 type="tel" 
                 required
+                value={whatsapp}
+                onChange={(e) => setWhatsapp(e.target.value)}
                 className="w-full px-4 py-3 bg-gray-50 border border-gray-200 rounded-r-lg focus:outline-none focus:ring-2 focus:ring-[var(--color-emerald)]/20 focus:border-[var(--color-emerald)] transition-colors text-gray-800"
                 placeholder="81234567890"
               />
