@@ -41,6 +41,23 @@ export const metadata: Metadata = {
     description: "You are cordially invited to celebrate the wedding of Tiara & Erianto.",
     type: "website",
     locale: "id_ID",
+    url: "https://tiaraerianto.vercel.app",
+    siteName: "Tiara & Erianto Wedding",
+    images: [
+      {
+        url: "https://tiaraerianto.vercel.app/images/gallery/JNY08543.webp",
+        width: 1024,
+        height: 1024,
+        alt: "Tiara & Erianto - Wedding Invitation",
+        type: "image/webp",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Tiara & Erianto — Wedding Invitation",
+    description: "You are cordially invited to celebrate the wedding of Tiara & Erianto.",
+    images: ["https://tiaraerianto.vercel.app/images/gallery/JNY08543.webp"],
   },
 };
 
