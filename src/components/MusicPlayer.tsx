@@ -36,7 +36,7 @@ export default function MusicPlayer() {
       height: "0",
       width: "0",
       playerVars: {
-        autoplay: 0,
+        autoplay: 1,
         loop: 1,
         playlist: videoId, // Required for looping
         controls: 0,
@@ -48,7 +48,9 @@ export default function MusicPlayer() {
       events: {
         onReady: () => {
           playerRef.current?.setVolume(50);
+          playerRef.current?.playVideo();
           setIsReady(true);
+          setIsPlaying(true);
         },
       },
     });
