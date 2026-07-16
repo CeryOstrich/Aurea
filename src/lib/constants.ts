@@ -70,6 +70,6 @@ export const GALLERY_IMAGES = galleryFiles.map((filename, i) => ({
 }));
 
 export const MUSIC = {
-  src: "https://youtu.be/u2ah9tWTkmk",
-  title: "Alex Warren - Ordinary",
+  src: "https://youtu.be/1WCIrw85zbQ",
+  title: "Background Music",
 };
