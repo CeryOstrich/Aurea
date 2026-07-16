@@ -54,9 +54,9 @@ export default function CoupleProfile() {
               <p className="font-heading text-3xl sm:text-4xl text-[var(--color-emerald-dark)] mb-2">
                 {COUPLE.groomFullName}
               </p>
-              <p className="text-gray-500 font-body text-sm mb-4">
-                Putra dari<br />
-                <span className="font-medium text-gray-800">{COUPLE.groomParents}</span>
+              <p className="text-gray-500 font-heading mb-4 leading-relaxed mt-1">
+                <span className="italic text-lg">Putra dari</span><br />
+                <span className="font-medium text-gray-800 text-xl">{COUPLE.groomParents}</span>
               </p>
 
             </div>
@@ -90,9 +90,9 @@ export default function CoupleProfile() {
               <p className="font-heading text-3xl sm:text-4xl text-[var(--color-emerald-dark)] mb-2">
                 {COUPLE.brideFullName}
               </p>
-              <p className="text-gray-500 font-body text-sm mb-4">
-                Putri dari<br />
-                <span className="font-medium text-gray-800">{COUPLE.brideParents}</span>
+              <p className="text-gray-500 font-heading mb-4 leading-relaxed mt-1">
+                <span className="italic text-lg">Putri dari</span><br />
+                <span className="font-medium text-gray-800 text-xl">{COUPLE.brideParents}</span>
               </p>
 
             </div>

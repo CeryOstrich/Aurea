@@ -8,7 +8,7 @@ export const COUPLE = {
   groomFullName: "Erianto",
   brideFullName: "Tiara",
   groomParents: "Bapak Tamrin & Ibu Hj. Ramlah",
-  brideParents: "Almarhum Bapak Abd. Rahim & Ibu Hj. Evi Sandra",
+  brideParents: "Alm Bpk Abd. Rahim & Ibu Hj. Evi",
   initials: "T & E",
   hashtag: "#TiaraErianto",
 };
