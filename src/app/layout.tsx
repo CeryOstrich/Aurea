@@ -33,7 +33,7 @@ const poppins = Poppins({
 export const metadata: Metadata = {
   title: "Tiara & Erianto — Wedding Invitation",
   description:
-    "You are cordially invited to celebrate the wedding of Tiara & Erianto. 18 Juli 2026.",
+    "You are cordially invited to celebrate the wedding of Tiara & Erianto. 19 Juli 2026.",
   keywords: ["wedding", "invitation", "Tiara", "Erianto", "undangan", "pernikahan"],
   authors: [{ name: "Auréa" }],
   openGraph: {

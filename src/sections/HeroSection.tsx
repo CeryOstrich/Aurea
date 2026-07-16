@@ -98,7 +98,7 @@ export default function HeroSection() {
             transition={{ delay: 1 }}
             className="text-lg sm:text-xl font-heading tracking-[0.15em] text-gray-800"
           >
-            18 Juli 2026
+            19 Juli 2026
           </motion.p>
 
           {/* Save the date */}

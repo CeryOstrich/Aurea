@@ -31,6 +31,10 @@ function InvitationContent() {
   }, []);
 
   const handleEnvelopeOpen = useCallback(() => {
+    // Attempt to play music synchronously with user click (fixes iOS block)
+    if (typeof window !== "undefined" && (window as any).playMusic) {
+      (window as any).playMusic();
+    }
     // Scroll to top before showing main content
     window.scrollTo(0, 0);
     setPhase("main");
@@ -69,9 +73,11 @@ function InvitationContent() {
             <ClosingSection />
           </main>
           <BottomNav />
-          <MusicPlayer />
         </>
       )}
+
+      {/* Mount MusicPlayer at all times to load iframe, but only show UI when in main phase */}
+      <MusicPlayer isVisible={phase === "main"} />
     </>
   );
 }

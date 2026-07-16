@@ -3,7 +3,7 @@
 // ============================================
 
 export const COUPLE = {
-  groomName: "Erianto",
+  groomName: "Erik",
   brideName: "Tiara",
   groomFullName: "Erianto",
   brideFullName: "Tiara",
@@ -13,7 +13,7 @@ export const COUPLE = {
   hashtag: "#TiaraErianto",
 };
 
-export const WEDDING_DATE = new Date("2026-07-18T11:00:00+08:00");
+export const WEDDING_DATE = new Date("2026-07-19T09:00:00+08:00");
 
 export const EVENTS = {
   akad: {
