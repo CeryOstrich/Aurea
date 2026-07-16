@@ -95,13 +95,12 @@ export default function Envelope({ guestName, onOpen }: EnvelopeProps) {
 
         {/* Bottom half: Guest + Button */}
         <div className="w-full flex flex-col items-center pb-10 sm:pb-14">
-
-          {/* Kepada Yth. card */}
+          {/* Guest name without card frame */}
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.7 }}
-            className="w-4/5 max-w-xs bg-white/90 px-6 py-5 rounded-2xl border border-[var(--color-emerald)]/20 shadow-sm backdrop-blur-md mb-6"
+            className="mb-6 text-center"
           >
             <p className="text-[0.6rem] tracking-[0.2em] uppercase text-[var(--color-emerald)] font-accent font-bold mb-2">
               Kepada Yth.
